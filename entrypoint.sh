@@ -17,8 +17,7 @@ if [[ -z "${API_URL}" ]]; then
   exit 1
 fi
 
-# cd /app
 echo "$(pwd)"
 echo "$(ls -la)"
 
-npx bluemachinecli  snapshot create-analyze --repo-id ${1} --file ${2}
+npx bluemachinecli snapshot create-analyze --repo-id ${1} --file ${2}
