@@ -1,0 +1,23 @@
+name: BluemachineScanner Scan
+description: Scan your sol files
+#
+inputs:
+  tm_url:
+    description: URL of BlueMachine API
+    required: true
+  tm_repository_id:
+    description: Repository Id in BlueMachineScanner
+    required: true    
+  tm_file:
+    description: The file to be sent to BlueMachineScanner
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.tm_repository_id }}
+    - ${{ inputs.tm_file }}        
+#
+branding:
+  icon: check
+  color: green
